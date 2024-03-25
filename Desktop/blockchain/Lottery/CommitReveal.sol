@@ -41,7 +41,7 @@ contract CommitReveal {
   event RevealHash(address sender, bytes32 revealHash, uint random);
 
   function getHash(bytes32 data) public view returns(bytes32){
-    return keccak256(abi.encodePacked(address(this), data));
+    return keccak256(abi.encodePacked(address(this) , data));
   }
 
   function revealAnswer(bytes32 answer,bytes32 salt) public {
